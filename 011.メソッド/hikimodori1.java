@@ -73,7 +73,10 @@ public class hikimodori1 extends HttpServlet {
             
             String[] newhello = hello("0001");
             
-            out.println(Arrays.toString(newhello));
+            for(int i = 1; i < 3; i++){
+                out.println(newhello[i]);
+            }
+            
             
             out.println("</body>");
             out.println("</html>");
