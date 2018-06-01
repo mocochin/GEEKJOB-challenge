@@ -53,16 +53,19 @@ public class Blackjack extends HttpServlet {
             Dealer Dealer1 = new Dealer();
             //2つのクラスをインスタンス化
 
-            
-                        
+            out.println("現在の山札の数は" + Dealer1.cards.size() + "です"+"<br>");            
                        
             Dealer1.setCard(Dealer1.deal());
             User1.setCard(Dealer1.deal());
             //myCardsにカードを持たせる
             
+            
+            
             out.println("ディーラーのカードは" + Dealer1.myCards +"です"+"<br>");
             out.println("ユーザーのカードは" + User1.myCards +"です"+"<br>");
-                
+            
+            out.println("現在の山札の数は" + Dealer1.cards.size() + "です"+"<br>");
+            
             if(Dealer1.checkSum() == false){                   
                     Dealer1.setCard(Dealer1.hit());
                     out.println("ディーラーはhitします"+"<br>");
@@ -78,6 +81,8 @@ public class Blackjack extends HttpServlet {
             } 
             //それぞれのカードをチェックし、hitするか判断,falseならhitする
             
+            out.println("現在の山札の数は" + Dealer1.cards.size() + "です"+"<br>");
+            
             out.println("ディーラーのカードは"+Dealer1.myCards +"です"+"<br>");
             out.println("ユーザーのカードは"+User1.myCards +"です"+"<br>");
             
@@ -89,15 +94,17 @@ public class Blackjack extends HttpServlet {
   
             
             if (userAll > dealerAll && userAll <= 21) {
-                out.println("ユーザーの勝ちです");
+                out.println("ユーザーの勝ちです"+"<br>");
             } else if (userAll < dealerAll && dealerAll > 21){
-                out.println("ユーザーの勝ちです");
+                out.println("ユーザーの勝ちです"+"<br>");
             } else if (userAll == dealerAll){
-                out.println("ドローです");
+                out.println("ドローです"+"<br>");
             } else {
-                out.println("ディーラーの勝ちです");
+                out.println("ディーラーの勝ちです"+"<br>");
             }
             
+            out.println("現在の山札の数は" + Dealer1.cards.size() + "です"+"<br>");
+
             
             
             
